@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>this is home page</title>
+</head>
+<body>
+<section>
+ <div class="container">
+    <div class="row">
+    <div class="col-md-6 offset md-2">
+    
+    <div class="my-card mt-2">
+    
+    <div class="container text-center">
+    <img style="width: 80px" alt="" th:src="@{/img/membership.png}">
+    </div>
+    
+    <h1 class="text-center">Register Here</h1>
+    
+      
+    <form th:action="@{/do_register}" method = "post" th:object = "${user}">
+   
+   <!--  name field -->
+  
+    <div class="form-group">
+    <label for="name-field"
+     class="form-label">Your Name</label>
+    <input name="name" type="text" class="form-control" id="name-field" 
+    aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.name}"/>
+
+  </div>
+    
+    <!--  email field -->
+  
+    <div class="form-group">
+    <label for="email-field"
+     class="form-label">Your Email</label>
+    <input name ="email" type="email" class="form-control" id="email-field" 
+    aria-describedby="emailHelp" placeholder="Enter here" th:value="${user.email}"/>
+
+  </div>
+     
+     <!--password-field  -->
+     <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+  </div>   
+  
+  <div class="form-group">
+  <textarea name="about" rows="5" class="form-control" placeholder="Enter Something Yourself" th:value="${user.about}"></textarea>
+  </div>
+ 
+  <div class="mb-3 form-check text-center">
+    <input name="agreement" type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1"> Accepts Terms and Conditions</label>
+  </div>
+ 
+ <div class="container text-center" >
+   
+   <button class="btn btn-primary" type="submit">Submit</button> 
+   
+   <button  type="reset" class="btn btn-danger">Reset</button>
+ 
+ </div>     
+    
+    </form>
+
+
+
+
+
+
+
+
+
+
+    
+    
+    </div>
+    </div>
+  </div>
+ 
+ 
+ </div>
+ 
+
+</section>
+
+</body>
+</html>
